@@ -2,6 +2,8 @@
 
 A responsive UI Templates Management Dashboard built using HTML5, CSS3, and Vanilla JavaScript for an Independent Photography Studio.
 
+live vercel link: https://ui-templates-for-independent-photog.vercel.app/#
+
 ## Features
 - Search and filter templates
 - Add new templates
