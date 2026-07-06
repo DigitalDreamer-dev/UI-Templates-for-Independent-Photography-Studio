@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Templates Dashboard</title>
+
+  <link rel="stylesheet" href="inex.css">
+</head>
+
+<body>
+
+  <div class="loading-overlay" id="loadingOverlay" aria-live="polite">
+    <div class="loader"></div>
+    <p>Loading UI Templates...</p>
+  </div>
+
+  <div class="dashboard">
+
+    <aside class="sidebar">
+
+      <div class="logo">
+        <h2>StudioUI</h2>
+        <p>Template Portal</p>
+      </div>
+
+      <nav>
+
+        <ul>
+
+          <li class="active">
+            <a href="#">Dashboard</a>
+          </li>
+
+          <li>
+            <a href="#">Templates</a>
+          </li>
+
+          <li>
+            <a href="#">Categories</a>
+          </li>
+
+          <li>
+            <a href="#">Reports</a>
+          </li>
+
+          <li>
+            <a href="#">Settings</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+
+        <div>
+
+          <h1>UI Templates Management</h1>
+
+          <p>
+            Independent Photography Studio
+          </p>
+
+        </div>
+
+  </header>
+
+  <section class="stats">
+
+    <article class="stat-card">
+
+      <h3>Total Templates</h3>
+
+      <h2 id="totalTemplates">3</h2>
+
+      <span>Available</span>
+
+    </article>
+
+    <article class="stat-card">
+
+      <h3>Categories</h3>
+
+      <h2 id = "totalCategories">4</h2>
+
+      <span>Organized</span>
+
+    </article>
+
+    <article class="stat-card">
+
+      <h3>Recently Updated</h3>
+
+      <h2 id="recentUpdate">Today</h2>
+
+      <span>Latest Changes</span>
+
+    </article>
+
+  </section>
+
+  <section class="toolbar">
+
+    <div class="search-box">
+
+      <input type="search" id="searchInput" placeholder="Search templates..." aria-label="Search UI Templates">
+
+      <button id="searchBtn">
+        Search
+      </button>
+
+    </div>
+
+    <div class="filter-group">
+
+      <button class="filter active">
+        All
+      </button>
+
+      <button class="filter">
+        Wedding
+      </button>
+
+      <button class="filter">
+        Portrait
+      </button>
+
+      <button class="filter">
+        Invoice
+      </button>
+
+    </div>
+
+  </section>
+
+  <section class="template-section">
+
+    <div class="section-header">
+
+      <h2>Available Templates</h2>
+
+      <button id="showFormBtn">
+        + New Template
+      </button>
+
+    </div>
+
+    <div id="emptyState" class="empty-state">
+
+      <h3>No Data Found</h3>
+
+      <p>
+        There are currently no templates matching your search.
+      </p>
+
+    </div>
+
+    <div class="template-grid" id="templateGrid">
+
+      <article class="template-card">
+
+        <div class="badge">
+          Wedding
+        </div>
+
+        <h3>Wedding Booking Form</h3>
+
+        <p>
+          Customer booking workflow for photography sessions.
+        </p>
+
+        <div class="card-footer">
+
+          <span>Updated Today</span>
+
+          <button>
+            Open
+          </button>
+
+        </div>
+
+      </article>
+
+      <article class="template-card">
+
+        <div class="badge">
+          Portrait
+        </div>
+
+        <h3>Photo Shoot Checklist</h3>
+
+        <p>
+          Checklist used before portrait sessions.
+        </p>
+
+        <div class="card-footer">
+
+          <span>Updated Yesterday</span>
+
+          <button>
+            Open
+          </button>
+
+        </div>
+
+      </article>
+
+      <article class="template-card">
+
+        <div class="badge">
+          Invoice
+        </div>
+
+        <h3>Invoice Template</h3>
+
+        <p>
+          Billing template for completed projects.
+        </p>
+
+        <div class="card-footer">
+
+          <span>Updated This Week</span>
+
+          <button>
+            Open
+          </button>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <section class="form-section">
+
+    <div class="section-header">
+
+      <h2>Create New Template</h2>
+
+    </div>
+
+    <form id="templateForm" novalidate>
+
+      <div class="form-group">
+
+        <label for="templateName">
+          Template Name
+        </label>
+
+        <input type="text" id="templateName" name="templateName" aria-label="Template Name" required>
+
+        <small class="error-message">
+          Template name is required.
+        </small>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="category">
+
+          Category
+
+        </label>
+
+        <select id="category" aria-label="Template Category">
+
+          <option value="">
+            Select Category
+          </option>
+
+          <option>
+            Wedding
+          </option>
+
+          <option>
+            Portrait
+          </option>
+
+          <option>
+            Invoice
+          </option>
+
+          <option>
+            General
+          </option>
+
+        </select>
+
+        <small class="error-message">
+          Please select a category.
+        </small>
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="description">
+
+          Description
+
+        </label>
+
+        <textarea id="description" rows="5" aria-label="Template Description" required></textarea>
+
+        <small class="error-message">
+          Description is required.
+        </small>
+
+      </div>
+
+      <div class="form-buttons">
+
+        <button type="reset" class="secondary">
+
+          Reset
+
+        </button>
+
+        <button type="submit" class="primary">
+
+          Save Template
+
+        </button>
+
+      </div>
+
+    </form>
+
+  </section>
+
+  <footer>
+
+    <p>
+
+      Independent Photography Studio
+
+    </p>
+
+    <span>
+
+      Version 1.0
+
+    </span>
+
+  </footer>
+  <div id="templateModal" class="modal">
+
+  <div class="modal-content">
+
+    <span class="close-modal">&times;</span>
+
+    <h2 id="modalTitle"></h2>
+
+    <p><strong>Category:</strong> <span id="modalCategory"></span></p>
+
+    <p id="modalDescription"></p>
+
+    <button id="closeModalBtn" class="primary">
+      Close
+    </button>
+
+  </div>
+
+</div>
+
+  </main>
+
+  </div>
+
+  <script src="ui.js"></script>
+
+</body>
+
+</html>
